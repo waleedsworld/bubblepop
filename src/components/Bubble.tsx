@@ -96,10 +96,11 @@ const Bubble: React.FC<BubbleProps> = ({
       {particles.map((particle) => (
         <div
           key={particle.id}
-          className="absolute w-2 h-2 bg-blue-400 rounded-full pointer-events-none animate-ping"
+          className="absolute w-2 h-2 rounded-full pointer-events-none animate-ping"
           style={{
             left: x + particle.x,
             top: y + particle.y,
+            backgroundColor: 'var(--particle, #60a5fa)',
             animationDuration: '0.5s',
           }}
         />

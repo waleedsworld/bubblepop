@@ -97,23 +97,19 @@
 
 @layer components {
   .bubble-gradient {
-    background: linear-gradient(145deg, 
-      rgba(147, 197, 253, 0.8) 0%,
-      rgba(59, 130, 246, 0.6) 30%,
-      rgba(37, 99, 235, 0.4) 70%,
-      rgba(29, 78, 216, 0.3) 100%
+    background: linear-gradient(145deg,
+      var(--bubble-1, rgba(147, 197, 253, 0.8)) 0%,
+      var(--bubble-2, rgba(59, 130, 246, 0.6)) 30%,
+      var(--bubble-3, rgba(37, 99, 235, 0.4)) 70%,
+      var(--bubble-4, rgba(29, 78, 216, 0.3)) 100%
     );
     border: 1px solid rgba(255, 255, 255, 0.3);
     backdrop-filter: blur(4px);
+    transition: background 0.4s ease, transform 0.3s ease;
   }
-  
+
   .bubble-gradient:hover {
-    background: linear-gradient(145deg, 
-      rgba(147, 197, 253, 0.9) 0%,
-      rgba(59, 130, 246, 0.7) 30%,
-      rgba(37, 99, 235, 0.5) 70%,
-      rgba(29, 78, 216, 0.4) 100%
-    );
+    filter: brightness(1.08) saturate(1.1);
     transform: scale(1.05);
   }
 }
