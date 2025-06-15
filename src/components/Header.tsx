@@ -1,14 +1,16 @@
 import React from 'react';
-import { Palette, Check } from 'lucide-react';
+import { Palette, Volume2, VolumeX, Check } from 'lucide-react';
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from '@/components/ui/popover';
 import { useTheme } from '@/hooks/useTheme';
+import { useSound } from '@/hooks/useSound';
 
 const Header = () => {
   const { theme, themes, setTheme } = useTheme();
+  const { muted, toggleMuted } = useSound();
 
   return (
     <header className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-20">
@@ -30,6 +32,7 @@ const Header = () => {
           </div>
 
           <nav className="flex items-center gap-2">
+            {/* Theme picker */}
             <Popover>
               <PopoverTrigger asChild>
                 <button
@@ -72,6 +75,21 @@ const Header = () => {
                 </div>
               </PopoverContent>
             </Popover>
+
+            {/* Sound toggle */}
+            <button
+              onClick={toggleMuted}
+              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gray-200 bg-white/70 text-gray-700 transition-colors hover:border-gray-300 hover:text-gray-900"
+              aria-label={muted ? 'Unmute pop sounds' : 'Mute pop sounds'}
+              aria-pressed={!muted}
+              title={muted ? 'Sound off' : 'Sound on'}
+            >
+              {muted ? (
+                <VolumeX className="h-4 w-4" />
+              ) : (
+                <Volume2 className="h-4 w-4" />
+              )}
+            </button>
           </nav>
         </div>
       </div>
