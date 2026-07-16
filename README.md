@@ -52,7 +52,7 @@ Warning: mildly addictive. We're not sorry. 🫧
 
 ## 🚀 Live demo
 
-🌐 **[Coming soon](#)** — deploying to Cloudflare Pages. (Link drops here once it's live.)
+🌐 **[bubblepop-2oo.pages.dev](https://bubblepop-2oo.pages.dev/)** — go pop some bubbles. No install required.
 
 ## 🏁 Quick start
 
